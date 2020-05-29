@@ -19,6 +19,22 @@
     transition: .3s ease;
     perspective: 800px;
 }
+
+@keyframes changing-background {
+    from {
+        background: skyblue;
+        box-shadow: 0 -400px 300px -300px steelblue inset;
+    }
+    50% {
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px orangered inset;
+    }
+    85% {
+        background: darkslateblue;
+        box-shadow: 0 -400px 300px -300px transparent inset;
+    }
+}
+
 .box_front {
     position: relative;
     overflow: hidden;
@@ -26,6 +42,7 @@
     height: 380px;
     background: skyblue;
     box-shadow: 0 -400px 300px -300px steelblue inset;
+    animation: changing-background 80s linear infinite;
 }
 
 .ship::after {
@@ -49,14 +66,16 @@
     border-radius: 20px 0 0 0;
     background: #fff;
 }
-@keyframes sailing-ship{
-    from{
+
+@keyframes sailing-ship {
+    from {
         transform: translateX(200px);
     }
-    to{
+    to {
         transform: translateX(-500px);
     }
 }
+
 .ship {
     position: absolute;
     right: 0;
@@ -64,7 +83,6 @@
     width: 100px;
     height: 36px;
     animation: sailing-ship 40s linear infinite;
-
 }
 
 .ship_smokestack {
@@ -94,38 +112,37 @@
     border-radius: 50%;
     background: #fff;
 }
-@keyframes move-smoke{
-    from{
+
+@keyframes move-smoke {
+    from {
         opacity: 1;
     }
-    40%{
+    40% {
         opacity: 0.7;
         transform: translate(5px, -15px) scale(1.5);
     }
-    to{
+    to {
         opacity: 0;
         transform: translate(15px, -25px) scale(2.0);
     }
 }
+
 .smoke-1 {
     top: -25px;
     right: 44px;
     animation: move-smoke 3s linear infinite;
-
 }
 
 .smoke-2 {
     top: -25px;
     right: 42px;
     animation: move-smoke 3s linear 1s infinite;
-
 }
 
 .smoke-3 {
     top: -25px;
     right: 49px;
     animation: move-smoke 3s linear 2s infinite;
-
 }
 
 .sun {
@@ -292,7 +309,6 @@
 .cloud-4 {
     top: 170px;
     animation: cloud4 23s linear infinite;
-
 }
 
 .sea {
